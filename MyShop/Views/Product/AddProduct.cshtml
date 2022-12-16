@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Products";
+}
+
+@model ProductModel
+
+
+<div class="p-5">
+    <div class="row text-center">
+        <h1>Add Product</h1>
+    </div>
+    <div class="row justify-content-center p-2">
+        <div class="col-md-5 m-2 p-5 border shadow-lg border-5 rounded-3">
+            <div class="align-items-center">
+                <form asp-action="AddProduct">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group mb-2">
+                        <label asp-for="CatId" class="control-label"></label>
+                        <input asp-for="CatId" class="form-control" />
+                        <span asp-validation-for="CatId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label asp-for="Title" class="control-label"></label>
+                        <input asp-for="Title" class="form-control" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label asp-for="Images" class="control-label"></label>
+                        <input asp-for="Images" class="form-control" />
+                        <span asp-validation-for="Images" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label asp-for="Desc" class="control-label"></label>
+                        <input asp-for="Desc" class="form-control" />
+                        <span asp-validation-for="Desc" class="text-danger"></span>
+                    </div>
+                   
+                    <div class="form-group text-center mb-4">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <a asp-action="AllProducts">Back to List</a>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

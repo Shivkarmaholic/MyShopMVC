@@ -1,0 +1,14 @@
+﻿
+
+@model ProductModel
+
+
+    <div class="card rounded-3 border border-5 border-primary p-3 m-3 align-items-center shadow-lg" style="width: 18rem;">
+        <img src="@Model.Images" class="card-img-top" style="height:250px; width:150px" alt="@Model.Title">
+        <div class="card-body">
+            <h5 class="card-title ">@Model.Title</h5>
+            <p class="card-text">@Model.Desc</p>
+        </div>
+    <span class="badge bg-secondary rounded-pill bg-success p-3">@Model.Price &#8377;</span>
+    </div>
+

@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Products";
+}
+
+@model BaseResponseModel
+
+ <div class="text-center pt-4">
+        <a class="btn btn-primary" asp-action="AddProduct">Add Product</a>
+ </div>
+<div class="row justify-content-evenly">
+    @{
+        List<ProductModel> list = (List<ProductModel>)Model.Response1;
+        @if (HttpContextAccessor.HttpContext.Session.GetString("username") != null)
+        {
+            
+
+            @foreach (ProductModel x in list)
+            {
+                <div class="col-4 py-3">                    
+                    @await Component.InvokeAsync("Product",x)
+                </div>
+            }
+
+        }
+    }
+</div>
+
